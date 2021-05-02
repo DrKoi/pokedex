@@ -40,41 +40,41 @@ const cargarTabla = ()=>{
     
     let tipo = document.createElement("i");
     if (p.tipo == "1"){ //fuego
-      tipo.classList.add("fas", "fa-fire");
+      tipo.classList.add("fas", "fa-fire", "fuego", "fa-3x");
     }else if (p.tipo == "2"){ //agua
-      tipo.classList.add("fas", "fa-tint");
+      tipo.classList.add("fas", "fa-tint", "agua", "fa-3x");
     }else if (p.tipo == "3"){ //planta
-      tipo.classList.add("fas", "fa-leaf");
+      tipo.classList.add("fas", "fa-leaf", "planta", "fa-3x");
     }else if (p.tipo == "4"){ //normal
-      tipo.classList.add("fab", "fa-galactic-republic");
+      tipo.classList.add("fab", "fa-galactic-republic", "normal", "fa-3x");
     }else if (p.tipo == "5"){ //hielo
-      tipo.classList.add("fas", "fa-snowflake");
+      tipo.classList.add("fas", "fa-snowflake", "hielo", "fa-3x");
     }else if (p.tipo == "6"){ //fantasma
-      tipo.classList.add("fas", "fa-ghost");
+      tipo.classList.add("fas", "fa-ghost", "fantasma", "fa-3x");
     }else if (p.tipo == "7"){ //siquico
-      tipo.classList.add("fas", "fa-brain");
+      tipo.classList.add("fas", "fa-brain", "psiquico", "fa-3x");
     }else if (p.tipo == "8"){ //lucha
-      tipo.classList.add("fas", "fa-fist-raised");
+      tipo.classList.add("fas", "fa-fist-raised","lucha", "fa-3x");
     }else if (p.tipo == "9"){ //volador
-      tipo.classList.add("fas", "fa-feather");
+      tipo.classList.add("fas", "fa-feather", "volador", "fa-3x");
     }else if (p.tipo == "10"){ //electrico
-      tipo.classList.add("fas", "fa-bolt");
+      tipo.classList.add("fas", "fa-bolt", "electrico", "fa-3x");
     }else if (p.tipo == "11"){ //tierra
-      tipo.classList.add("fas", "fa-mountain");
+      tipo.classList.add("fas", "fa-mountain", "tierra", "fa-3x");
     }else if (p.tipo == "12"){ //roca
-      tipo.classList.add("fas", "fa-dice-d20");
+      tipo.classList.add("fas", "fa-dice-d20", "roca", "fa-3x");
     }else if (p.tipo == "13"){ //siniestro
-      tipo.classList.add("fas", "fa-moon");
+      tipo.classList.add("fas", "fa-moon", "siniestro", "fa-3x");
     }else if (p.tipo == "14"){ //dragon
-      tipo.classList.add("fas", "fa-dragon");
+      tipo.classList.add("fas", "fa-dragon", "dragon", "fa-3x");
     }else if (p.tipo == "15"){ //hada
-      tipo.classList.add("fas", "fa-bahai");
+      tipo.classList.add("fas", "fa-bahai", "hada", "fa-3x");
     }else if (p.tipo == "16"){ //acero
-      tipo.classList.add("fab", "fa-jira");
+      tipo.classList.add("fab", "fa-jira", "acero", "fa-3x");
     }else if (p.tipo == "17"){ //bicho <i class="fas fa-bug"></i>
-      tipo.classList.add("fas", "fa-bug");
+      tipo.classList.add("fas", "fa-bug", "bicho", "fa-3x");
     }else { //veneno
-      tipo.classList.add("fas", "fa-skull");
+      tipo.classList.add("fas", "fa-skull", "veneno", "text-center", "fa-3x");
     }
 
     tdTipo.appendChild(tipo);
