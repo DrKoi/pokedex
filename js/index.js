@@ -74,7 +74,7 @@ const cargarTabla = ()=>{
     }else if (p.tipo == "17"){ //bicho <i class="fas fa-bug"></i>
       tipo.classList.add("fas", "fa-bug", "bicho", "fa-3x");
     }else { //veneno
-      tipo.classList.add("fas", "fa-skull", "veneno", "text-center", "fa-3x");
+      tipo.classList.add("fas", "fa-skull", "veneno", "fa-3x");
     }
 
     tdTipo.appendChild(tipo);

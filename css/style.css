@@ -14,14 +14,15 @@ header {
   font-family: "Press Start 2P", cursive;
 }
 .fuego{
-    color: #F05030
+    color: #F05030;
+    
 }
 .acero{
-    color: #A8A8C0
+    color: #A8A8C0;
 }
 
 .agua {
-    color: #3899F8
+    color: #3899F8;
 }
 .bicho {
     color: #A8B820
@@ -30,7 +31,7 @@ header {
     color: #7860E0
 }
 .electrico {
-    color: #F8D030
+    color: #F8D030;
 }
 .fantasma {
     color: #6060B0
