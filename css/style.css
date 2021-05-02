@@ -1,9 +1,15 @@
 header {
-    background-color: #e60023;
-    
+  background-color: #e60023;
+}
+.logo {
+  height: 100px;
+  width: auto;
 }
 
+.bgHeaderCards {
+  background-color: #4682b4;
+}
 
-.bgHeaderCards{background-color: #4682B4;}
-
-.fontTable{font-family: "Press Start 2P", cursive;}
+.fontTable {
+  font-family: "Press Start 2P", cursive;
+}

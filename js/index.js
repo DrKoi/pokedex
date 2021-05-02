@@ -18,32 +18,79 @@ tinymce.init({
 
 const pokemones = [];
 const cargarTabla = ()=>{
+  //1. Obtener una referencia a la tabla
+  let tbody = document.querySelector("#tbody-tabla");
   
-  const tbody = document.querySelector("#tbody-tabla");
-
-  //tbody.innerHTML = 
+  tbody.innerHTML = "";
+  //2. Recorrer la lista de pokemones
   for (let i = 0; i < pokemones.length; ++i){
-    let p = pokemons[i];
+    let p = pokemones[i];
+    //3. Por cada pokemon generar una fila de la tabla (tr)
     let tr = document.createElement("tr");
-
+    //4. Por cada artributo generar un td de la tabla
     let tdNro = document.createElement("td");
     let tdNombre = document.createElement("td");
     let tdTipo = document.createElement("td");
     let tdDescripcion = document.createElement("td");
     let tdAcciones = document.createElement("td");
-    
+
+    //Definir lo que va en la tabla
     tdNro.innerText = i + 1;
     tdNombre.innerText = p.nombre;
-    tdTipo.innerText = p.tipo;
-    tdDescripcion.innerText = p.Descripcion;
-    tdAcciones.innerText = p.acciones;
+    
+    let tipo = document.createElement("i");
+    if (p.tipo == "1"){ //fuego
+      tipo.classList.add("fas", "fa-fire");
+    }else if (p.tipo == "2"){ //agua
+      tipo.classList.add("fas", "fa-tint");
+    }else if (p.tipo == "3"){ //planta
+      tipo.classList.add("fas", "fa-leaf");
+    }else if (p.tipo == "4"){ //normal
+      tipo.classList.add("fab", "fa-galactic-republic");
+    }else if (p.tipo == "5"){ //hielo
+      tipo.classList.add("fas", "fa-snowflake");
+    }else if (p.tipo == "6"){ //fantasma
+      tipo.classList.add("fas", "fa-ghost");
+    }else if (p.tipo == "7"){ //siquico
+      tipo.classList.add("fas", "fa-brain");
+    }else if (p.tipo == "8"){ //lucha
+      tipo.classList.add("fas", "fa-fist-raised");
+    }else if (p.tipo == "9"){ //volador
+      tipo.classList.add("fas", "fa-feather");
+    }else if (p.tipo == "10"){ //electrico
+      tipo.classList.add("fas", "fa-bolt");
+    }else if (p.tipo == "11"){ //tierra
+      tipo.classList.add("fas", "fa-mountain");
+    }else if (p.tipo == "12"){ //roca
+      tipo.classList.add("fas", "fa-dice-d20");
+    }else if (p.tipo == "13"){ //siniestro
+      tipo.classList.add("fas", "fa-moon");
+    }else if (p.tipo == "14"){ //dragon
+      tipo.classList.add("fas", "fa-dragon");
+    }else if (p.tipo == "15"){ //hada
+      tipo.classList.add("fas", "fa-bahai");
+    }else if (p.tipo == "16"){ //acero
+      tipo.classList.add("fab", "fa-jira");
+    }else if (p.tipo == "17"){ //bicho <i class="fas fa-bug"></i>
+      tipo.classList.add("fas", "fa-bug");
+    }else { //veneno
+      tipo.classList.add("fas", "fa-skull");
+    }
 
+    tdTipo.appendChild(tipo);
+    //appendChild cuando quiero agregar un elemento dentro de otro
+    //innerText cuando quiero definir un texto
+    //innerHTML cuando quiero definir directamente el html
+
+    tdDescripcion.innerHTML = p.descripcion;
+    //TODO: Qué hago con las acciones
+    //5. Agregar los td al tr
     tr.appendChild(tdNro);
     tr.appendChild(tdNombre);
     tr.appendChild(tdDescripcion);
     tr.appendChild(tdTipo);
-    
-
+    tr.appendChild(tdAcciones);
+    //6. Agregar el tr a la tabla
     tbody.appendChild(tr);
   }
 };
@@ -61,5 +108,6 @@ document.querySelector("#registrar-btn").addEventListener("click", () => {
   pokemon.descripcion = descripcion;
 
   pokemones.push(pokemon);
+  cargarTabla();
   Swal.fire("Resultado exitoso!", "Pokemon registrado", "success");
 });

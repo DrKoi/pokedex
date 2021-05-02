@@ -17,6 +17,7 @@
       integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="vendor/fontawesome-free-5.15.3-web/css/all.min.css">
     <link rel="stylesheet" href="css/style.css" />
 
     <title>Pokedex</title>
@@ -28,11 +29,10 @@
         <div class="text-center col-12 col-md-6 col-lg-4">
           <img
             id="pokedex-logo"
-            class="img-fluid"
+            class="logo"
             src="img\icon.png"
             alt="Logo de pokedex"
-            width="100px"
-            height="auto"
+            
           />
         </div>
         <div class="col-12 col-md-6 col-lg-8 fontTable">
@@ -85,11 +85,12 @@
                     type="radio"
                     name="legendario-rb"
                     id="legendario-no"
+                    checked
                     class="form-check-input form-inline"
                   />
                   <label
                     for="legendario-no"
-                    checked
+                    
                     class="fontTable form-check-label"
                     >No</label
                   >
@@ -163,12 +164,14 @@
                   <tr class="fontTable">
                     <th>N°</th>
                     <th>Nombre</th>
-                    <th>Tipo</th>
                     <th>Descripción</th>
+                    <th>Tipo</th>
                     <th>Acciones</th>
                   </tr>
                 </thead>
-                <tbody id="tbody-tabla"></tbody>
+                <tbody id="tbody-tabla">
+
+                </tbody>
               </table>
             </div>
           </div>
