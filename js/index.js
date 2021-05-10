@@ -15,7 +15,25 @@ tinymce.init({
   content_style:
     "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
 });
-
+const Transferir = async function(){
+  
+  let nro =this.nro;
+  let res = await Swal.fire({
+    title: "Desea realmente continuar?",
+    text: "Esta intentando transferir un pokemon, esto no se puede revertir",
+    icon: "warning",
+    showCancelButton:true,
+    confirmButtonText: "Sí hazlo!"
+  })
+  if(res.isConfirmed){
+    pokemones.splice(nro,1);
+    cargarTabla();
+    Swal.fire("Pokemon Transferido", "El profesor Oak cuidará de él", "info");
+  }else{
+    Swal.fire("Cancelado", "Operación no realizada", "error");
+  }
+  
+};
 const pokemones = [];
 const cargarTabla = ()=>{
   //1. Obtener una referencia a la tabla
@@ -76,14 +94,25 @@ const cargarTabla = ()=>{
     }else { //veneno
       tipo.classList.add("fas", "fa-skull", "veneno", "fa-3x");
     }
-
+    tdTipo.classList.add("text-center");
     tdTipo.appendChild(tipo);
     //appendChild cuando quiero agregar un elemento dentro de otro
     //innerText cuando quiero definir un texto
     //innerHTML cuando quiero definir directamente el html
 
     tdDescripcion.innerHTML = p.descripcion;
-    //TODO: Qué hago con las acciones
+    
+    let boton = document.createElement("button");
+    boton.classList.add("btn", "btn-danger");
+    boton.innerText = "Transferir al profesor Oak";
+
+    boton.nro = i;
+    tdAcciones.appendChild(boton);
+    tdAcciones.classList.add("text-center");
+
+    boton.addEventListener("click", Transferir);
+
+
     //5. Agregar los td al tr
     tr.appendChild(tdNro);
     tr.appendChild(tdNombre);
